@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Scoreboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Live Scoreboard</h1>
+
+  <div class="scoreboard">
+    <ul id="scoreboard-list">
+      <!-- Display top 10 highest user scores -->
+    </ul>
+  </div>
+
+  <form id="scoreForm" class="score-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Username" required />
+    
+    <label for="score">Score:</label>
+    <input type="number" id="score" name="score" placeholder="Score earned" />
+
+    <button onclick="updateScore()">Submit</button>
+  </form>
+  
+
+  <script src="script.js"></script>
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</body>
+</html>

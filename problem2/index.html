@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate</title>
+    <link rel="icon" href="images/arrows-rotate-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h4 class="guide">[Tab] switch input, [Space] reverse</h4>
+        <div class="header">
+            <h1 class="title">Exchange Rate</h1>
+        </div>
+        <div class="form">
+            <div class="form-section-1">
+                <div class="money-input">
+                    <input id="input-1" type="number" class="input-field">
+                        <button id="currency-btn-1" class="currency-btn">
+                            <h3 id="currency-1" class="currency"></h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <ul id="dropdown-currency-1" class="currency-dropdown currency-dropdown-1"></ul>
+                        </button>
+                </div>
+                
+                <button id="reverse-btn" class="reverse-btn">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                </button>
+                
+                <div class="money-input">
+                    <input id="input-2" type="number" class="input-field">
+                    <button id="currency-btn-2" class="currency-btn">
+                        <h3 id="currency-2" class="currency"></h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul id="dropdown-currency-2" class="currency-dropdown currency-dropdown-2"></ul>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-section-2">
+            <h2 id="rate-display" class="rate-display"></h2>
+            <h2 id="rate-period" class="rate-period">Exchange rate fluctuated in 1 Year</h2>
+        </div>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Display today
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString('en-US', options);
+        document.querySelector('.rate-period').textContent = formattedDate;
+    </script>
+</body>
+</html>
