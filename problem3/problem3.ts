@@ -1,5 +1,4 @@
-import React, { Children, useMemo } from 'react';
-import { FC } from 'react';
+import React, { useMemo } from 'react';
 
 interface WalletBalance {
   currency: string;
@@ -47,7 +46,7 @@ const WalletRow = ({ currency, amount, usdValue }: WalletRowProps): React.ReactE
   return (
     <div className='wallet-row'>  // ClassName must be a string, additionally, there is no classes object to access classes.row
       <span>Currency: {currency}</span>
-      <span>Amount: {amount ? amount.toFixed(2) : '0'}</span> {/* Formatted amount here */}
+      <span>Amount: {amount ? amount.toFixed(2) : '0'}</span>
       <span>Value: ${usdValue ? usdValue.toFixed(2): '0'}</span>
     </div>
   );
